@@ -198,20 +198,20 @@ class StableMath:
         # // S = sum of final balances but y                                                                           //
         # // P = product of final balances but y                                                                       //
         # **************************************************************************************************************/
-        print("Context", "OUTGIVENIN" )
+        # print("Context", "OUTGIVENIN" )
         invariant = StableMath.calculateInvariant(amplificationParameter, balances)
-        print("Invariant", invariant)
+        # print("Invariant", invariant)
         balances[tokenIndexIn] = balances[tokenIndexIn] + tokenAmountIn
         finalBalanceOut = StableMath.getTokenBalanceGivenInvariantAndAllOtherBalances(amplificationParameter, balances, invariant, tokenIndexOut)
 
-        print("FinalBalance Out", finalBalanceOut)
+        # print("FinalBalance Out", finalBalanceOut)
 
         balances[tokenIndexIn] = balances[tokenIndexIn] - tokenAmountIn
 
         result = balances [tokenIndexOut] - finalBalanceOut  # TODO took out .sub(1) at the end of this statement
 
-        print(result)
-        print("END-CONTEXT", "OUTGIVENIN" )
+        # print(result)
+        # print("END-CONTEXT", "OUTGIVENIN" )
 
         return result
         # Flow of calculations:
